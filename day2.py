@@ -1,5 +1,3 @@
-import math
-
 # 소수 찾기 프로그램
 def is_prime(num) -> bool:
     """
@@ -8,9 +6,11 @@ def is_prime(num) -> bool:
     :return: < boolean >
     """
     if num >= 2:
-        for i in range(2, int(math.sqrt(num)) + 1):
+        i = 2
+        while(i <= int(num**0.5) + 1 ):
             if num % i == 0:
                 return False
+            i += 1
     else:
         return False
 
@@ -25,3 +25,6 @@ else:
     print(f"{n} is NOT prime number")
 
 
+# v1.1) for -> while
+# v1.2) while 구문으로 구간 소수를 출력하는 프로그램 작성
+# v1.3) ** 대신 pow 함수
