@@ -1,4 +1,4 @@
-# 구간 소수 찾기 프로그램
+import math
 
 def is_prime(num) -> bool:
     """
@@ -8,7 +8,7 @@ def is_prime(num) -> bool:
     """
     if num >= 2:
         i = 2
-        while(i <= int(num**0.5) + 1 ):
+        while(i <= int(math.pow(num,0.5)) + 1 ):
             if num % i == 0:
                 return False
             i += 1
