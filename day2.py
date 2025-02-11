@@ -1,3 +1,5 @@
+import math
+
 # dan  =  int(input("Input dan : "))
 #
 # # for dan in range(2,10,1):
@@ -9,10 +11,11 @@ n = int(input("Input number : "))
 is_prime = True
 
 if  n > 1:
-    for i in range(2, n):
+    for i in range(2, int(math.sqrt(n)) + 1):
         if n % i == 0:
             is_prime = False
             break
+        print(i, " ")
 
     if is_prime:
         print(f"{n} is prime number")
