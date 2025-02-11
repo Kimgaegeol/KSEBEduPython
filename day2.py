@@ -1,26 +1,27 @@
 import math
 
-# dan  =  int(input("Input dan : "))
-#
-# # for dan in range(2,10,1):
-# for i in range(1,10):
-#     print(f"{dan} * {i} = {dan*i}")
-
 # 소수 찾기 프로그램
-n = int(input("Input number : "))
-is_prime = True
-
-if  n > 1:
-    for i in range(2, int(math.sqrt(n)) + 1):
-        if n % i == 0:
-            is_prime = False
-            break
-        print(i, " ")
-
-    if is_prime:
-        print(f"{n} is prime number")
+def is_prime(num) -> bool:
+    """
+    소수 판정 함수  / 소수면 True, 아니면 False
+    :param num: < integer >
+    :return: < boolean >
+    """
+    if num >= 2:
+        for i in range(2, int(math.sqrt(num)) + 1):
+            if num % i == 0:
+                return False
     else:
-        print(f"{n} is NOT prime number")
+        return False
 
+    return True
+
+help(is_prime)
+
+n = int(input("Input number : "))
+if is_prime(n):
+    print(f"{n} is prime number")
 else:
     print(f"{n} is NOT prime number")
+
+
