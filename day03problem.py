@@ -7,6 +7,7 @@ def printMenu(menu):
 drinks = ["위스키","와인","소주","고량주","사케"]
 foods = ["초콜릿","치즈","삼겹살","양꼬치","광어"]
 
+# dictionary 함수 리스트로 구현
 {
 # print(drinks_foods.pop("고량주"))
 # for index, value in enumerate(drinks):
@@ -36,12 +37,20 @@ foods = ["초콜릿","치즈","삼겹살","양꼬치","광어"]
 }
 
 while True:
-    menu = input(f'다음 술중에 고르세요.\n1) {drinks[0]}   2) {drinks[1]}   3) {drinks[2]}   4) {drinks[3]}   5) {drinks[4]}   6) 아무거나   7) 종료 : ')
-    if menu == '6':
-        menu = random.randint(1,5)
+    menu = 0
+    menuText = "다음 술중에 고르세요.\n"
+    for index, value in enumerate(drinks):
+        menuText += str(index + 1) + ") " +  value + "  "
+    menuText +=  str(len(drinks) + 1) + ")  아무거나 " + str(len(drinks) + 2) + ")  종료 : "
+
+    menu = input(menuText)
+
+    if menu == str(len(drinks) + 1):
+        menu = random.randint(1,len(drinks))
         printMenu(menu)
-    elif menu == '7':
+    elif menu == str(len(drinks) + 2):
         print(f'다음에 또 오세요')
         break
     else:
         printMenu(menu)
+
