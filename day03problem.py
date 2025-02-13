@@ -1,11 +1,18 @@
 import random
 
 def printMenu(menu):
-    choice = int(menu)
-    print(f'{drinks[choice-1]}에 어울리는 안주는 {foods[choice-1]} 입니다')
+    try:
+        choice = int(menu)
+        print(choice)
+        if 1 <= choice and choice <= len(drinks):
+            print(f'{drinks[choice - 1]}에 어울리는 안주는 {foods[choice - 1]} 입니다')
+            return
+    except Exception as e:
+        print(e)
 
-drinks = ["위스키","와인","소주","고량주","사케"]
-foods = ["초콜릿","치즈","삼겹살","양꼬치","광어"]
+drinks = ["위스키","와인","소주","고량주"]
+foods = ["초콜릿","치즈","삼겹살","양꼬치"]
+price = [50000,30000,5000,7500]
 
 # dictionary 함수 리스트로 구현
 {
