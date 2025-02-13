@@ -97,6 +97,8 @@
 #     else:
 #         choiceMenuLogic(choice)
 #
+import time
+
 
 #====================================================================================================================
 
@@ -236,6 +238,11 @@ def factorial_repetition(n) -> int:
 
 number = int(input())
 print(f'{number}! = {factorial_repetition(number)} ')
+
+s = time.time()
+print(f"{number}! = {factorial_repetition(number)}")
+e = time.time()
+print(e-s)
 
 # ====================================================================================================================
 
