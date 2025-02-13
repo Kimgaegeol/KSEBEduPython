@@ -1,3 +1,6 @@
+# Assignment
+# 2중 데코레이터 적용( 성능 측정 데코레이터, 디스크립션 데코레이터 ) 를 팩토리얼 함수에 적용하시오.
+
 import time
 
 def time_decorator(f):
@@ -38,8 +41,8 @@ def factorial(number) -> int:
 
     return result
 
-if __name__ == '__main__':
-    f1 = time_decorator(description_decorator(factorial))
+# if __name__ == '__main__':
+#     f1 = time_decorator(description_decorator(factorial))
     # f2 = description_decorator(time_decorator(factorial))
     print(f1(5))
     # print()

@@ -258,35 +258,35 @@
 # ====================================================================================================================
 
 # decorator
-def description(f):  # closure
-    def inner(*args):
-        print(f.__name__)
-        print(f.__doc__)
-        r = f(*args)
-        return r
-
-    return inner
-
-def squares(n):
-    """
-    제곱 함수
-    """
-    return n * n
-
-# @description # power 함수 호출 시 무조건 description decorator 실행됨
-def power(b, e):
-    """
-    거듭제곱 함수
-    """
-    result = 1
-    for _ in range(e):
-        result = result * b
-    return result
-
-
-# print(squares(7))
-f1 = description(squares) # f1은 이너함수의 주소 / f1()은 이너 함수로서 작용 / f1(9)은 이너 함수에 9를 넣은 값
-print(f1())
+# def description(f):  # closure
+#     def inner(*args):
+#         print(f.__name__)
+#         print(f.__doc__)
+#         r = f(*args)
+#         return r
+#
+#     return inner
+#
+# def squares(n):
+#     """
+#     제곱 함수
+#     """
+#     return n * n
+#
+# # @description # power 함수 호출 시 무조건 description decorator 실행됨
+# def power(b, e):
+#     """
+#     거듭제곱 함수
+#     """
+#     result = 1
+#     for _ in range(e):
+#         result = result * b
+#     return result
+#
+#
+# # print(squares(7))
+# f1 = description(squares) # f1은 이너함수의 주소 / f1()은 이너 함수로서 작용 / f1(9)은 이너 함수에 9를 넣은 값
+# print(f1())
 
 # print(power(2, 10))
 # f2 = description(power)
@@ -310,7 +310,29 @@ print(f1())
 #     print(x)
 
 # ====================================================================================================================
-
-
 # Assignment
-# 2중 데코레이터 적용( 성능 측정 데코레이터, 디스크립션 데코레이터 ) 를 팩토리얼 함수에 적용하시오.
+# kwargs를 사용한 데코레이터 예제
+
+def log_decorator(func):
+    def wrapper(*args,**kwargs):
+        print(f"Function Name : {func.__name__}")
+        print(f"Function Argument : {args}")
+        print(f"Function Keyword Argument : {kwargs}")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@log_decorator
+def greet(name, greeting="안녕하세요", age=None):
+    return f"{greeting}, {name}(age : {age})" if age else f"{greeting}, {name}"
+
+print(greet("인하"))
+print()
+print(greet("인하","안녕"))
+print()
+print(greet("Nakamura", greeting="Gonniziwa"))
+print()
+print(greet("Nakamura", greeting="Gonniziwa", age=32))
+
+
+# ====================================================================================================================
