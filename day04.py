@@ -229,7 +229,18 @@ import time
 # print(tuple(map(abs,ns)))
 
 # ====================================================================================================================
+import time
 
+def time_decorator(func):
+    def wrapper(*arg):
+        s = time.time()
+        r = func(*arg)
+        e = time.time()
+        print(f'실행시간 : {e-s}초')
+        return r
+    return wrapper
+
+@time_decorator
 def factorial_repetition(n) -> int:
     result = 1
     for i in range(2, n+1):
@@ -239,10 +250,12 @@ def factorial_repetition(n) -> int:
 number = int(input())
 print(f'{number}! = {factorial_repetition(number)} ')
 
-s = time.time()
-print(f"{number}! = {factorial_repetition(number)}")
-e = time.time()
-print(e-s)
+# s = time.time()
+# print(f"{number}! = {factorial_repetition(number)}")
+# e = time.time()
+# print(e-s)
+
+
 
 # ====================================================================================================================
 
