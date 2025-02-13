@@ -97,7 +97,7 @@
 #     else:
 #         choiceMenuLogic(choice)
 #
-import time
+# import time
 
 
 #====================================================================================================================
@@ -229,70 +229,66 @@ import time
 # print(tuple(map(abs,ns)))
 
 # ====================================================================================================================
-import time
-
-def time_decorator(func):
-    def wrapper(*arg):
-        s = time.time()
-        r = func(*arg)
-        e = time.time()
-        print(f'실행시간 : {e-s}초')
-        return r
-    return wrapper
-
-@time_decorator
-def factorial_repetition(n) -> int:
-    result = 1
-    for i in range(2, n+1):
-        result = result * i
-    return result
-
-number = int(input())
-print(f'{number}! = {factorial_repetition(number)} ')
+# import time
+#
+# def time_decorator(func):
+#     def wrapper(*arg):
+#         s = time.time()
+#         r = func(*arg)
+#         e = time.time()
+#         print(f'실행시간 : {e-s}초')
+#         return r
+#     return wrapper
+#
+# @time_decorator
+# def factorial_repetition(n) -> int:
+#     result = 1
+#     for i in range(2, n+1):
+#         result = result * i
+#     return result
+#
+# number = int(input())
+# print(f'{number}! = {factorial_repetition(number)} ')
 
 # s = time.time()
 # print(f"{number}! = {factorial_repetition(number)}")
 # e = time.time()
 # print(e-s)
 
-
-
 # ====================================================================================================================
 
-#solid
-# Open Closed Principle
-
 # decorator
-# def description(f):  # closure
-#     def inner(*args):
-#         print(f.__name__)
-#         print(f.__doc__)
-#         r = f(*args)
-#         return r
-#
-#     return inner
-#
-#
-# def squares(n):
-#     """
-#     제곱 함수
-#     """
-#     return n * n
-#
-# @description
-# def power(b, e):
-#     """
-#     거듭제곱 함수
-#     """
-#     result = 1
-#     for _ in range(e):
-#         result = result * b
-#     return result
-#
-#
-# f1 = description(squares)
-# print(f1(9))
-# print(power(2, 10))
+def description(f):  # closure
+    def inner(*args):
+        print(f.__name__)
+        print(f.__doc__)
+        r = f(*args)
+        return r
+
+    return inner
+
+def squares(n):
+    """
+    제곱 함수
+    """
+    return n * n
+
+@description # power 함수 호출 시 무조건 description decorator 실행됨
+def power(b, e):
+    """
+    거듭제곱 함수
+    """
+    result = 1
+    for _ in range(e):
+        result = result * b
+    return result
+
+
+print(squares(7))
+f1 = description(squares) # f1은 이너함수의 주소 / f1()은 이너 함수로서 작용 / f1(9)은 이너 함수에 9를 넣은 값
+print(f1(9))
+
+print(power(2, 10))
 # f2 = description(power)
 # print(f2(2, 10))
 
