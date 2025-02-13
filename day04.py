@@ -249,7 +249,7 @@
 #
 # number = int(input())
 # print(f'{number}! = {factorial_repetition(number)} ')
-
+#
 # s = time.time()
 # print(f"{number}! = {factorial_repetition(number)}")
 # e = time.time()
@@ -273,7 +273,7 @@ def squares(n):
     """
     return n * n
 
-@description # power 함수 호출 시 무조건 description decorator 실행됨
+# @description # power 함수 호출 시 무조건 description decorator 실행됨
 def power(b, e):
     """
     거듭제곱 함수
@@ -284,11 +284,11 @@ def power(b, e):
     return result
 
 
-print(squares(7))
+# print(squares(7))
 f1 = description(squares) # f1은 이너함수의 주소 / f1()은 이너 함수로서 작용 / f1(9)은 이너 함수에 9를 넣은 값
-print(f1(9))
+print(f1())
 
-print(power(2, 10))
+# print(power(2, 10))
 # f2 = description(power)
 # print(f2(2, 10))
 
@@ -311,3 +311,6 @@ print(power(2, 10))
 
 # ====================================================================================================================
 
+
+# Assignment
+# 2중 데코레이터 적용( 성능 측정 데코레이터, 디스크립션 데코레이터 ) 를 팩토리얼 함수에 적용하시오.
