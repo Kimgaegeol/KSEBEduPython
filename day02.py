@@ -1,5 +1,6 @@
 import math
 
+"you coding noob"
 def my_pow(b, e) -> float:
     """
 
