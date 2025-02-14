@@ -9,6 +9,7 @@
 # foods.append("광어")
 # price.append(10000)
 #
+#
 # amount = [0 for menu in drinks]
 #
 # welcome_message = ""
@@ -96,8 +97,6 @@
 #         print("1) 메뉴 추가 2) 메뉴 삭제 3) 메뉴 수정 4) 끝내기")
 #     else:
 #         choiceMenuLogic(choice)
-#
-# import time
 
 
 #====================================================================================================================
@@ -313,26 +312,26 @@
 # Assignment
 # kwargs를 사용한 데코레이터 예제
 
-def log_decorator(func):
-    def wrapper(*args,**kwargs):
-        print(f"Function Name : {func.__name__}")
-        print(f"Function Argument : {args}")
-        print(f"Function Keyword Argument : {kwargs}")
-        result = func(*args, **kwargs)
-        return result
-    return wrapper
-
-@log_decorator
-def greet(name, greeting="안녕하세요", age=None):
-    return f"{greeting}, {name}(age : {age})" if age else f"{greeting}, {name}"
-
-print(greet("인하"))
-print()
-print(greet("인하","안녕"))
-print()
-print(greet("Nakamura", greeting="Gonniziwa"))
-print()
-print(greet("Nakamura", greeting="Gonniziwa", age=32))
+# def log_decorator(func):
+#     def wrapper(*args,**kwargs):
+#         print(f"Function Name : {func.__name__}")
+#         print(f"Function Argument : {args}")
+#         print(f"Function Keyword Argument : {kwargs}")
+#         result = func(*args, **kwargs)
+#         return result
+#     return wrapper
+#
+# @log_decorator
+# def greet(name, greeting="안녕하세요", age=None):
+#     return f"{greeting}, {name}(age : {age})" if age else f"{greeting}, {name}"
+#
+# print(greet("인하"))
+# print()
+# print(greet("인하","안녕"))
+# print()
+# print(greet("Nakamura", greeting="Gonniziwa"))
+# print()
+# print(greet("Nakamura", greeting="Gonniziwa", age=32))
 
 
 # ====================================================================================================================
