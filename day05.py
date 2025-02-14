@@ -277,36 +277,43 @@
 
 # ==================================================================================================================
 
-class FlyingMixin:
-    def fly(self):
-        return f"{self.name}이(가) 하늘을 훨훨 날아갑니다~"
-
-class SwimmingMixin:
-    def swim(self):
-        return f"{self.name}이(가) 수영을 합니다."
-
-class Pokemon:
-    def __init__(self, name):
-        self.name = name
-
-    def attack(self):
-        print("공격~")
-
-class Charizard(Pokemon, FlyingMixin):
-    pass
-
-class Gyarados(Pokemon, SwimmingMixin):
-    pass
-
-g1 = Gyarados("갸라도스")
-c1 = Charizard("리자몽")
-# print(c1.fly())
-# print(g1.swim())
-# c1.attack()
-# #Charizard.attack()
-# Charizard.attack(c1)
-print(g1.name)
-g1.name = "잉어킹"
-print(g1.name)
+# class FlyingMixin:
+#     def fly(self):
+#         return f"{self.name}이(가) 하늘을 훨훨 날아갑니다~"
+#
+# class SwimmingMixin:
+#     def swim(self):
+#         return f"{self.name}이(가) 수영을 합니다."
+#
+# class Pokemon:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def attack(self):
+#         print("공격~")
+#
+# class Charizard(Pokemon, FlyingMixin):
+#     pass
+#
+# class Gyarados(Pokemon, SwimmingMixin):
+#     pass
+#
+# g1 = Gyarados("갸라도스")
+# c1 = Charizard("리자몽")
+# # print(c1.fly())
+# # print(g1.swim())
+# # c1.attack()
+# # #Charizard.attack()
+# # Charizard.attack(c1)
+# print(g1.name)
+# g1.name = "잉어킹"
+# print(g1.name)
 
 # ==================================================================================================================
+
+# 따로 적은 게 아니야 이게
+# 바뀐 파일만 반영하기 때문에 안바뀌면 그 버전으로 안들어가 봐바
+
+#내가 지금 day05 파일만 바뀌었지 이거를 내가 v5.12 라고 할게
+# 그럼 지금 day05만 내용이 바뀌어서 이 파일만 버전이 v5.12이고
+# 나머지는 v5.12가 아니라 그냥 자기가 바뀌었던 최신 커밋 버전을 그대로 따라
