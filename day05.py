@@ -53,55 +53,88 @@
 
 #==================================================================================================================
 
-def factorial_repetition(n) -> int:
-    '''
-    반복문을 이용한 팩토리얼 함수
-    :param n: 정수, int
-    :return: 팩토리얼 값, int
-    '''
-    result = 1
-    for i in range(2, n+1):
-        result = result * i
-    return result
-
-def factorial_recursion(n):
-    '''
-    재귀함수를 사용한 팩토리얼 함수
-    :param n: 정수, int
-    :return: function, int
-    '''
-    if n == 1:
-        return n
-    else:
-        return n * factorial_recursion(n-1)
-
-def fibonacci(n):
-    list = [0, 1]
-    result = 0
-    if n==0:
-        return list[0]
-    elif n==1:
-        return list[1]
-    else:
-        for i in range(2,n+1):
-            result = list[0] + list[1]
-            list[0] = list[1]
-            list[1] = result
-        return result
-
-def fibonacci_recursion(n)->int:
-    if n ==0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fibonacci_recursion(n-2) + fibonacci_recursion(n-1)
-
-print(fibonacci(8))
+# def factorial_repetition(n) -> int:
+#     '''
+#     반복문을 이용한 팩토리얼 함수
+#     :param n: 정수, int
+#     :return: 팩토리얼 값, int
+#     '''
+#     result = 1
+#     for i in range(2, n+1):
+#         result = result * i
+#     return result
+#
+# def factorial_recursion(n):
+#     '''
+#     재귀함수를 사용한 팩토리얼 함수
+#     :param n: 정수, int
+#     :return: function, int
+#     '''
+#     if n == 1:
+#         return n
+#     else:
+#         return n * factorial_recursion(n-1)
+#
+# import time
+#
+# def time_decorator(f):
+#     """
+#     성능 측정 데코레이터
+#     """
+#     def wrapper(*args):
+#         start = time.time()
+#         result = f(*args)
+#         end = time.time()
+#         print(f'실행시간 : {end - start}')
+#         return result
+#     return wrapper
+#
+# def fibonacci_repetition(n):
+#     list = [0, 1]
+#     result = 0
+#     if n==0:
+#         return list[0]
+#     elif n==1:
+#         return list[1]
+#     else:
+#         for i in range(2,n+1):
+#             result = list[0] + list[1]
+#             list[0] = list[1]
+#             list[1] = result
+#         return result
+#
+# def fibonacci_recursion(n)->int:
+#     if n ==0:
+#         return 0
+#     elif n == 1:
+#         return 1
+#     else:
+#         return fibonacci_recursion(n-2) + fibonacci_recursion(n-1)
+#
+# print(fibonacci_repetition(55))
+#
+# print(fibonacci_recursion(55))
 
 # number = int(input("number : "))
 # print(factorial_repetition(number))
 # print(factorial_recursion(number))
 # print(globals())
+
+#==================================================================================================================
+
+def bomb_repetition(n):
+    for i in range(n, 0, -1):
+        print(i)
+    print("펑")
+
+def bomb_recursion(n):
+    if n == 0:
+        print("펑")
+    else:
+        print(n)
+        bomb_recursion(n-1)
+
+bomb_repetition(10)
+bomb_recursion(10)
 
 #==================================================================================================================
