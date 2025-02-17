@@ -310,3 +310,16 @@
 # print(g1.name)
 
 # ==================================================================================================================
+import csv
+
+try:
+    # file = open('README.md', 'r')
+
+    with open('README.md', 'r') as fp:
+        readme_list = fp.readlines()
+        print(readme_list)
+        rls = readme_list[0].split(' ')
+        print(rls)
+        fp.close()
+except FileNotFoundError as err:
+    print(f"{fp} is not exist. {err}")
